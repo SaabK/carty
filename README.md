@@ -7,7 +7,8 @@ Carty is an online e-commerce store similar to Daraz where various sellers can c
 - Search
 - Buy Product with Stripe
 - Shopping Cart System
--
+- User Account System ( save his details such as card number, address in it )
+- Share the product
 
 # Technologies I intend to use:
 
