@@ -9,6 +9,7 @@ Carty is an online e-commerce store similar to Daraz where various sellers can c
 - Shopping Cart System
 - User Account System ( save his details such as card number, address in it )
 - Share the product
+- Animations
 
 # Technologies I intend to use:
 
@@ -16,3 +17,4 @@ Carty is an online e-commerce store similar to Daraz where various sellers can c
 - Shadcn - UI Library
 - Tailwind
 - NextJS
+- Framer Motion for animations
