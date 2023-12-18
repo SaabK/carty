@@ -2,12 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-#products {
+/* For hiding the extra products that could not fit in the section */
+/* #products {
   grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
   grid-template-rows: 1fr;
   grid-auto-rows: 0;
   overflow: hidden;
-}
+} */
 
 @layer base {
   :root {
