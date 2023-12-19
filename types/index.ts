@@ -1,4 +1,4 @@
-interface product {
+export interface product {
     id: number;
     title: string;
     description: string;
@@ -6,4 +6,12 @@ interface product {
     thumbnail: string;
     price: number;
     rating: number;
+}
+
+export interface InfiniteScrollProps {
+    getProducts: () => Promise<any>;
+}
+
+export interface LoadingProps {
+    loading: boolean;
 }

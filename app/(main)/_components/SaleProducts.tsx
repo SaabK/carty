@@ -1,16 +1,13 @@
 import React from "react";
 import ProductCard from "./ProductCard";
 import { Button } from "@/components/ui/button";
-
-async function fetchProducts() {
-    const response = await fetch("https://dummyjson.com/products?limit=5");
-
-    return response.json();
-}
+import axios from "axios";
+import { URL } from "@/data";
+import { product } from "@/types";
 
 async function SaleProducts() {
-    const { products } = await fetchProducts();
-    console.log(products);
+    const response = await axios.get(`${URL}?limit=5`);
+    const { products } = await response.data;
 
     return (
         <section id="products-on-sale" className="py-5 container">
