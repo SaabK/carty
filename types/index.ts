@@ -6,6 +6,8 @@ export interface product {
     thumbnail: string;
     price: number;
     rating: number;
+    brand: string;
+    category: string;
 }
 
 export interface InfiniteScrollProps {
@@ -14,4 +16,14 @@ export interface InfiniteScrollProps {
 
 export interface LoadingProps {
     loading: boolean;
+}
+
+export interface ProductPageProps {
+    params: {
+        id: string;
+    };
+}
+
+export interface ImagesProps {
+    images: string[];
 }
