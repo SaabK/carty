@@ -36,7 +36,7 @@ function ProductPage({ params: { id } }: ProductPageProps) {
     }, []);
 
     return (
-        <div className="container grid grid-cols-2 gap-4 my-5">
+        <div className="container grid grid-cols-2 gap-8 my-10">
             <Images images={product?.images} />
             <Details {...product} />
         </div>

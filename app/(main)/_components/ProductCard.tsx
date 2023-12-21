@@ -1,3 +1,4 @@
+import { product } from "@/types";
 import { Button } from "@/components/ui/button";
 import {
     Card,
@@ -8,7 +9,6 @@ import {
     CardTitle,
 } from "@/components/ui/card";
 import { LucideShoppingCart } from "lucide-react";
-// import star from "/icons/yellow_star.png";
 
 import Image from "next/image";
 import React from "react";
