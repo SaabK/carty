@@ -7,6 +7,8 @@ import Images from "../../_components/Images";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Details from "../../_components/Details";
+import YMLProducts from "../../_components/YMLProducts";
+import PABProducts from "../../_components/PABProducts";
 
 const getProduct = (id: string) => {
     const product = axios.get(`${URL}/${id}`).then((res) => res.data);
@@ -33,12 +35,25 @@ function ProductPage({ params: { id } }: ProductPageProps) {
             const result: Product = await getProduct(id);
             setProduct(result);
         })();
+
+        window.scrollTo(0, 0);
     }, []);
 
     return (
-        <div className="container grid grid-cols-2 gap-8 my-10">
-            <Images images={product?.images} />
-            <Details {...product} />
+        <div className="container my-10">
+            {/* Add a loader for when the product has not yet been fetched */}
+            <div className="grid grid-cols-2 gap-8 mb-12">
+                <Images images={product?.images} />
+                <Details {...product} />
+            </div>
+
+            <hr />
+
+            {product?.category && <YMLProducts category={product?.category} />}
+
+            <hr />
+
+            <PABProducts />
         </div>
     );
 }

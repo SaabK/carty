@@ -1,11 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import Link from "next/link";
 import React from "react";
 
 function Navbar() {
     return (
         <header className="container py-4 flex gap-5 items-center justify-center">
-            <span className="text-3xl font-extrabold mr-4">Carty.</span>
+            <span className="text-3xl font-extrabold mr-4 cursor-pointer">
+                <Link href="/">Carty.</Link>
+            </span>
             <Input
                 type="text"
                 placeholder="Search"

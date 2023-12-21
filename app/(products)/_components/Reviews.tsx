@@ -29,8 +29,8 @@ function Reviews({ rating }: ReviewsProps) {
                 <div className="flex gap-1">
                     {Array.from({ length: 5 }).map((_, index) => (
                         <Image
-                            width={20}
-                            height={20}
+                            width={22}
+                            height={22}
                             alt=""
                             src={greyStar}
                             key={index}
@@ -44,8 +44,8 @@ function Reviews({ rating }: ReviewsProps) {
                 >
                     {Array.from({ length: 5 }).map((_, index) => (
                         <Image
-                            width={20}
-                            height={20}
+                            width={22}
+                            height={22}
                             alt=""
                             src={yellowStar}
                             key={index}

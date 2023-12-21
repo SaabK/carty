@@ -27,3 +27,7 @@ export interface ProductPageProps {
 export interface ImagesProps {
     images: string[];
 }
+
+export interface HeadingProps {
+    text: string;
+}

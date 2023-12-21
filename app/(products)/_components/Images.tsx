@@ -27,7 +27,8 @@ function Images({ images }: ImagesProps) {
                         <Image
                             src={image}
                             alt="Product"
-                            layout="fill"
+                            height={384}
+                            width={500}
                             className="object-cover"
                         />
                     </div>

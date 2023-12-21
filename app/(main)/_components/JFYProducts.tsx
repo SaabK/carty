@@ -4,12 +4,13 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 
-import ProductCard from "./ProductCard";
+import ProductCard from "../../_components/ProductCard";
 
 import { URL } from "@/data";
 import { product } from "@/types";
 import { Button } from "@/components/ui/button";
 import Loading from "./Loading";
+import Heading from "@/app/_components/Heading";
 
 // Add skeletons too
 
@@ -42,9 +43,7 @@ function JFYProducts() {
 
     return (
         <section className="container my-7">
-            <h2 className="font-bold text-2xl my-2 bg-black text-white px-3 py-1.5 w-fit rounded-sm">
-                Just For You
-            </h2>
+            <Heading text="Just For You" />
             <div className="flex justify-between flex-wrap gap-6">
                 {products.slice(5).map((product: product) => (
                     <ProductCard key={product.id} product={product} />

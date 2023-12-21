@@ -39,8 +39,7 @@ function Details({
                     adipisicing elit. Ut repellat sapiente autem iste, odit
                     voluptatem adipisci, minus officiis esse consequuntur
                     aspernatur possimus provident impedit rem debitis culpa
-                    delectus itaque non laborum quaerat, veniam beatae
-                    perspiciatis? Quia quidem incidunt asperiores recusandae.
+                    delectus itaque non laborum quaerat.
                 </p>
             </div>
 
