@@ -14,14 +14,23 @@ function Details({
     rating,
     category,
 }: Product) {
-    // Number(((rating - Math.floor(rating)) * 100).toFixed(2)) is used to get that decimal numbers 4.09 -> 0.09 -> 9.00
-    // To get the percentage for the last star, we add the percentage of the previos stars to it so, 4/5 + 9.00%
-    const lastRatingStar =
-        (Math.floor(rating) / 5) * 100 +
-        Number(((rating - Math.floor(rating)) * 100).toFixed(2));
+    rating = 1.14;
 
-    // Fix this
-    console.log(Number((rating - Math.floor(rating)).toFixed(2)));
+    // Number(((rating - Math.floor(rating)) * 100).toFixed(2)) is used to get that decimal numbers 4.09 -> 0.09 -> 9.00 But it should 9% of the last 20% ( percentage of the remaining star ) so we add: 20%;
+    // To get the percentage for the last star, we add the percentage of the previos stars to it so, 4/5 + 9.00%
+    let lastRatingStar =
+        (Math.floor(rating) / 5 +
+            Number((rating - Math.floor(rating)).toFixed(2)) * 0.2) *
+        100;
+
+    console.log("Before: ", lastRatingStar);
+
+    // For ratings less than 0.17 some number is added to make the last star somewhat visible.
+    if (rating - Math.floor(rating) < 0.175) {
+        lastRatingStar = lastRatingStar + 5;
+    }
+
+    console.log("After: ", lastRatingStar);
 
     return (
         <article className="flex flex-col gap-1.5">

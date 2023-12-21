@@ -31,7 +31,6 @@ function ProductPage({ params: { id } }: ProductPageProps) {
     useEffect(() => {
         (async () => {
             const result: Product = await getProduct(id);
-            console.log(result);
             setProduct(result);
         })();
     }, []);

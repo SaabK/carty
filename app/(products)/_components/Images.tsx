@@ -7,14 +7,13 @@ import { Carousel } from "react-responsive-carousel";
 function Images({ images }: ImagesProps) {
     return (
         <div>
-            <Carousel showStatus={false}>
+            <Carousel showStatus={false} showThumbs={false}>
                 {images.map((image) => (
                     <div className="w-full h-96 relative">
                         <Image
                             src={image}
                             alt="Product"
-                            fill
-                            sizes=""
+                            layout="fill"
                             className="object-cover"
                         />
                     </div>
