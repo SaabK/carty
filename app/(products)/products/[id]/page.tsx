@@ -1,7 +1,7 @@
 "use client";
 
 import { URL } from "@/data";
-import { ProductPageProps, product as Product } from "@/types";
+import { ProductPageProps, product as Product, product } from "@/types";
 import Images from "../../_components/Images";
 
 import axios from "axios";
@@ -37,7 +37,7 @@ function ProductPage({ params: { id } }: ProductPageProps) {
         })();
 
         window.scrollTo(0, 0);
-    }, []);
+    }, [id]);
 
     return (
         <div className="container my-10">

@@ -22,8 +22,8 @@ function Images({ images }: ImagesProps) {
                 }
                 // showThumbs={false}
             >
-                {images.map((image) => (
-                    <div className="w-full h-96 relative">
+                {images.map((image, index) => (
+                    <div className="w-full h-96 relative" key={index}>
                         <Image
                             src={image}
                             alt="Product"
