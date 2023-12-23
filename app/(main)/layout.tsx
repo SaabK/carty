@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 
 function layout({ children }: { children: React.ReactNode }) {

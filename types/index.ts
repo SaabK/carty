@@ -1,3 +1,6 @@
+import { LucideProps } from "lucide-react";
+import { ForwardRefExoticComponent } from "react";
+
 export interface product {
     id: number;
     title: string;
@@ -30,4 +33,17 @@ export interface ImagesProps {
 
 export interface HeadingProps {
     text: string;
+    className?: string;
+}
+
+export interface productsState {
+    products: product[];
+    status: "idle" | "loading" | "success" | "failed";
+    error: string | null;
+}
+
+export interface Socials {
+    name: string;
+    icon: ForwardRefExoticComponent<LucideProps>;
+    href: string;
 }

@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import Link from "next/link";
 import React from "react";
+import SearchBar from "./SearchBar";
 
 function Navbar() {
     return (
@@ -9,13 +9,7 @@ function Navbar() {
             <span className="text-3xl font-extrabold mr-4 cursor-pointer">
                 <Link href="/">Carty.</Link>
             </span>
-            <Input
-                type="text"
-                placeholder="Search"
-                className="focus-visible:ring-transparent focus-visible:border-primary focus-visible:border-2"
-                id="search"
-                autoComplete="off"
-            />
+            <SearchBar />
             <div className="flex gap-2">
                 <Button type="button" variant="ghost">
                     Login

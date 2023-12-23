@@ -4,17 +4,18 @@ Carty is an online e-commerce store similar to Daraz where various sellers can c
 
 # Features that I intend to add:
 
-- Search
-- Buy Product with Stripe
-- Shopping Cart System
-- User Account System ( save his details such as card number, address in it )
-- Share the product
-- Animations
+-   Search
+-   Buy Product with Stripe
+-   Shopping Cart System
+-   User Account System ( save his details such as card number, address in it )
+-   Share the product
+-   Animations
+-   ADD DRY CODE at the end
 
 # Technologies I intend to use:
 
-- Lucide React - Icons
-- Shadcn - UI Library
-- Tailwind
-- NextJS
-- Framer Motion for animations
+-   Lucide React - Icons
+-   Shadcn - UI Library
+-   Tailwind
+-   NextJS
+-   Framer Motion for animations
