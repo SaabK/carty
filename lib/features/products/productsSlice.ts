@@ -19,7 +19,6 @@ export const productsSlice = createSlice({
             })
             .addCase(fetchProductsBySearch.fulfilled, (state, action) => {
                 state.products = action.payload.products;
-                console.log(state.products);
             })
             .addCase(fetchProductsBySearch.rejected, (state) => {
                 state.error =

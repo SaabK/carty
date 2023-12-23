@@ -19,11 +19,10 @@ function SocialIcon({ social }: SocialIconProps) {
 
     return (
         <li>
-            <Link href={social.href}>
+            <Link href={social.href} target="_blank">
                 <social.icon
                     onMouseEnter={handleEnter}
                     onMouseLeave={handleLeave}
-                    // color="white"
                     color={isHover ? "#333" : "white"}
                     width={20}
                     height={20}

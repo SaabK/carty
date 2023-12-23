@@ -5,6 +5,7 @@ import Navbar from "./_components/Navbar";
 import Footer from "./_components/Footer";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import StoreProvider from "./_components/StoreProvider";
+import LoadingComponent from "./_components/LoadingComponent";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,6 +28,7 @@ export default function RootLayout({
                 className={`${inter.className} min-h-screen flex flex-col justify-between`}
             >
                 <StoreProvider>
+                    <LoadingComponent />
                     <div>
                         <Navbar />
                         {children}

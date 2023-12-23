@@ -42,6 +42,10 @@ export interface productsState {
     error: string | null;
 }
 
+export interface loadingState {
+    progress: number;
+}
+
 export interface Socials {
     name: string;
     icon: ForwardRefExoticComponent<LucideProps>;

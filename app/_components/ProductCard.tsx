@@ -1,3 +1,5 @@
+"use client";
+
 import { product } from "@/types";
 import { Button } from "@/components/ui/button";
 import {
@@ -13,15 +15,22 @@ import { LucideShoppingCart } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 import Link from "next/link";
+import { useAppDispatch } from "@/lib/hooks";
+import { adjustProgress } from "@/lib/features/loading/loadingSlice";
 
 interface ProductCardProps {
     product: product;
 }
 
 function ProductCard({ product }: ProductCardProps) {
+    const dispatch = useAppDispatch();
+
     return (
         <Card className="w-56">
-            <Link href={`/products/${product.id}`}>
+            <Link
+                href={`/products/${product.id}`}
+                onClick={() => dispatch(adjustProgress(100))}
+            >
                 <Image
                     src={product.thumbnail}
                     alt={product.title}

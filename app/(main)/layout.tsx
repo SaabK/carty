@@ -1,8 +1,6 @@
-"use client";
-
 import React from "react";
 
-function layout({ children }: { children: React.ReactNode }) {
+function HomeLayout({ children }: { children: React.ReactNode }) {
     return (
         <>
             <main>{children}</main>
@@ -10,4 +8,4 @@ function layout({ children }: { children: React.ReactNode }) {
     );
 }
 
-export default layout;
+export default HomeLayout;
