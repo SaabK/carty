@@ -7,6 +7,8 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import StoreProvider from "./_components/StoreProvider";
 import LoadingComponent from "./_components/LoadingComponent";
 
+import { ClerkProvider } from "@clerk/nextjs";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -23,19 +25,21 @@ export default function RootLayout({
     children: React.ReactNode;
 }) {
     return (
-        <html lang="en">
-            <body
-                className={`${inter.className} min-h-screen flex flex-col justify-between`}
-            >
-                <StoreProvider>
-                    <LoadingComponent />
-                    <div>
-                        <Navbar />
-                        {children}
-                    </div>
-                    <Footer />
-                </StoreProvider>
-            </body>
-        </html>
+        <ClerkProvider>
+            <html lang="en">
+                <body
+                    className={`${inter.className} min-h-screen flex flex-col justify-between`}
+                >
+                    <StoreProvider>
+                        <LoadingComponent />
+                        <div>
+                            <Navbar />
+                            {children}
+                        </div>
+                        <Footer />
+                    </StoreProvider>
+                </body>
+            </html>
+        </ClerkProvider>
     );
 }

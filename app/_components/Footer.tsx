@@ -7,7 +7,7 @@ import Logo from "./Logo";
 
 function Footer() {
     return (
-        <footer className="bg-primary ">
+        <footer className="bg-primary">
             <div className="container my-2.5 flex justify-between items-center">
                 <Logo className="text-white" size="small" />
                 <p className="text-white text-xs">
