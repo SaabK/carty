@@ -1,12 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
 import productsReducer from "./features/products/productsSlice";
 import loadingReducer from "./features/loading/loadingSlice";
+import cartReducer from "./features/cart/cartSlice";
 
 export const makeStore = () => {
     return configureStore({
         reducer: {
             search: productsReducer,
             loading: loadingReducer,
+            cart: cartReducer,
         },
     });
 };

@@ -7,6 +7,7 @@ import Reviews from "./Reviews";
 import AddToCart from "./AddToCart";
 
 function Details({
+    id,
     title,
     description,
     brand,
@@ -47,7 +48,7 @@ function Details({
                 <h3 className="font-light text-3xl my-1 font-mono">
                     Rs.{(price * 100).toLocaleString("en-US")}
                 </h3>
-                <AddToCart />
+                <AddToCart id={id} name={title} />
             </div>
         </article>
     );

@@ -29,7 +29,7 @@ function Navbar() {
                             <span className="bg-red-500 text-white font-bold px-1.5 py-0.5 text-xs rounded-full absolute -top-1.5 -right-3">
                                 <span className="relative top-[1px]">0</span>
                             </span>
-                            <ShoppingCart className="hover:bg-black/10 px-1 w-7 h-7 rounded" />
+                            <ShoppingCart className="hover:bg-black/5 px-1 w-7 h-7 rounded" />
                         </Link>
                         <UserButton afterSignOutUrl="/" />
                     </div>

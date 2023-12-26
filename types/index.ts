@@ -51,3 +51,12 @@ export interface Socials {
     icon: ForwardRefExoticComponent<LucideProps>;
     href: string;
 }
+
+export interface CartItem {
+    id: string;
+    quantity?: number;
+}
+
+export interface CartState {
+    cart: CartItem[];
+}

@@ -6,6 +6,7 @@ import Footer from "./_components/Footer";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import StoreProvider from "./_components/StoreProvider";
 import LoadingComponent from "./_components/LoadingComponent";
+import { Toaster } from "@/components/ui/toaster";
 
 import { ClerkProvider } from "@clerk/nextjs";
 
@@ -27,16 +28,20 @@ export default function RootLayout({
     return (
         <ClerkProvider>
             <html lang="en">
-                <body
-                    className={`${inter.className} min-h-screen flex flex-col justify-between`}
-                >
+                <body className={`${inter.className} min-h-screen`}>
                     <StoreProvider>
                         <LoadingComponent />
-                        <div>
-                            <Navbar />
-                            {children}
+                        <div
+                            id="wrapper"
+                            className="flex flex-col justify-between min-h-screen"
+                        >
+                            <div>
+                                <Navbar />
+                                {children}
+                            </div>
+                            <Footer />
                         </div>
-                        <Footer />
+                        <Toaster />
                     </StoreProvider>
                 </body>
             </html>
