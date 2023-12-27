@@ -5,33 +5,31 @@ import axios from "axios";
 import { URL } from "@/data";
 import { product } from "@/types";
 import ProductCard from "@/app/_components/ProductCard";
+import CartProducts from "../_components/CartProducts";
+import Cart from "../_components/Cart";
 
-async function fetchProducts() {
-    const response = await axios.get(`${URL}?limit=5`);
-    const products = await response.data.products;
+const fetchProducts = () => {
+    const randomNumber = Math.floor(Math.random() * 85) + 1;
 
+    const products = axios
+        .get(`${URL}?limit=8&skip=${randomNumber}`)
+        .then((res) => res.data.products);
     return products;
-}
+};
 
 async function CartPage() {
     const products = await fetchProducts();
 
     return (
         <section className="container my-5">
-            <div className="grid grid-cols-5 gap-6">
+            <div className="grid grid-cols-5 gap-6 items-start">
                 <div className="col-span-3">
                     <Heading text="Your Shopping Cart" />
-                    <ul role="list" className="grid grid-cols-1 gap-3">
-                        {products.map((product: product, index: number) => (
-                            <li key={index}>
-                                <CartProduct {...product} />
-                            </li>
-                        ))}
-                    </ul>
+                    <Cart />
                 </div>
 
                 {/* TODO: here fetch 2 products of each category of products in the cart. Filter out the same values */}
-                <div className="col-span-2 self-end">
+                <div className="col-span-2">
                     <Heading text="You May Also Like" />
                     <div className="grid grid-cols-2 gap-6">
                         {products.map((product: product, index: number) => (

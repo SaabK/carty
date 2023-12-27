@@ -53,10 +53,12 @@ export interface Socials {
 }
 
 export interface CartItem {
-    id: string;
-    quantity?: number;
+    product: product;
+    quantity: number;
 }
 
 export interface CartState {
     cart: CartItem[];
+    price: number;
+    noOfItems: number;
 }

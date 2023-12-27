@@ -8,19 +8,20 @@ import { addToCart } from "@/lib/features/cart/cartSlice";
 import { useToast } from "@/components/ui/use-toast";
 import { ToastAction } from "@/components/ui/toast";
 import Link from "next/link";
+import { product } from "@/types";
 
 interface AddToCartProps {
-    id: number;
+    product: product;
     name: string;
 }
 
-function AddToCart({ id, name }: AddToCartProps) {
+function AddToCart({ product, name }: AddToCartProps) {
     const dispatch = useAppDispatch();
     const [quantity, setQuantity] = useState(1);
     const { toast } = useToast();
 
     const handleCart = () => {
-        dispatch(addToCart({ id, quantity }));
+        dispatch(addToCart({ product, quantity }));
 
         toast({
             title: "Added To Cart",

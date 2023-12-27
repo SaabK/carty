@@ -4,10 +4,43 @@ import { Minus, Plus, Trash2 } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 import { Badge } from "@/components/ui/badge";
+import { useAppDispatch } from "@/lib/hooks";
+import {
+    decrementQuantity,
+    deleteItem,
+    incrementQuantity,
+} from "@/lib/features/cart/cartSlice";
 
-function CartProduct({ thumbnail, title, description, brand, price }: product) {
+interface CartProductProps extends product {
+    quantity: number;
+}
+
+function CartProduct({
+    id,
+    thumbnail,
+    title,
+    description,
+    brand,
+    price,
+    quantity,
+}: CartProductProps) {
+    const dispatch = useAppDispatch();
+
+    const handleDecrement = () => {
+        if (quantity == 1) return;
+        dispatch(decrementQuantity(id));
+    };
+
+    const handleIncrement = () => {
+        dispatch(incrementQuantity(id));
+    };
+
+    const handleDelete = () => {
+        dispatch(deleteItem(id));
+    };
+
     return (
-        <article className="py-2 rounded grid grid-cols-7 gap-4 items-start ">
+        <>
             <Image
                 src={thumbnail}
                 alt="text"
@@ -18,10 +51,17 @@ function CartProduct({ thumbnail, title, description, brand, price }: product) {
             <div className="col-span-5 flex flex-col h-44">
                 <div className="flex justify-between">
                     <h3 className="text-2xl font-bold">{title}</h3>
-                    <Trash2
-                        color="#FF7F7F"
-                        className="w-6 cursor-pointer hover:bg-primary/5 p-1 rounded"
-                    />
+                    <Button
+                        variant="ghost"
+                        className="px-2 py-0.5"
+                        onClick={handleDelete}
+                    >
+                        <Trash2
+                            color="#FF7F7F"
+                            // className="w-6 cursor-pointer hover:bg-primary/5 p-1 rounded"
+                            className="w-5"
+                        />
+                    </Button>
                 </div>
                 <p className="text-sm text-justify">
                     {description} Lorem ipsum dolor sit amet consectetur
@@ -34,17 +74,26 @@ function CartProduct({ thumbnail, title, description, brand, price }: product) {
                         Rs. {(price * 100).toLocaleString("en-US")}
                     </span>
                     <div className="flex items-center gap-[13px]">
-                        <Button variant="outline" className="px-2.5 py-0 h-8">
+                        <Button
+                            variant="outline"
+                            className="px-2.5 py-0 h-8"
+                            onClick={handleDecrement}
+                            disabled={quantity == 1}
+                        >
                             <Minus className="w-3" />
                         </Button>
-                        1
-                        <Button variant="outline" className="px-2.5 py-0 h-8">
+                        {quantity}
+                        <Button
+                            variant="outline"
+                            className="px-2.5 py-0 h-8"
+                            onClick={handleIncrement}
+                        >
                             <Plus className="w-3" />
                         </Button>
                     </div>
                 </div>
             </div>
-        </article>
+        </>
     );
 }
 

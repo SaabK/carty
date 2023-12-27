@@ -2,19 +2,17 @@ import { Badge } from "@/components/ui/badge";
 import { product as Product } from "@/types";
 import React from "react";
 
-import Image from "next/image";
 import Reviews from "./Reviews";
 import AddToCart from "./AddToCart";
 
+interface DetailsProps {
+    product: Product;
+}
+
 function Details({
-    id,
-    title,
-    description,
-    brand,
-    price,
-    rating,
-    category,
-}: Product) {
+    product: { title, description, brand, price, rating, category },
+    product,
+}: DetailsProps) {
     return (
         <article className="flex flex-col gap-2.5 justify-between">
             <div>
@@ -48,7 +46,7 @@ function Details({
                 <h3 className="font-light text-3xl my-1 font-mono">
                     Rs.{(price * 100).toLocaleString("en-US")}
                 </h3>
-                <AddToCart id={id} name={title} />
+                <AddToCart product={product} name={title} />
             </div>
         </article>
     );

@@ -17,6 +17,7 @@ import React from "react";
 import Link from "next/link";
 import { useAppDispatch } from "@/lib/hooks";
 import { adjustProgress } from "@/lib/features/loading/loadingSlice";
+import { addToCart } from "@/lib/features/cart/cartSlice";
 
 interface ProductCardProps {
     product: product;
@@ -24,6 +25,10 @@ interface ProductCardProps {
 
 function ProductCard({ product }: ProductCardProps) {
     const dispatch = useAppDispatch();
+
+    const handleAddToCart = () => {
+        dispatch(addToCart({ product }));
+    };
 
     return (
         <Card className="w-56">
@@ -47,33 +52,33 @@ function ProductCard({ product }: ProductCardProps) {
                         consectetur adipisicing elit. Qui, inventore!
                     </CardDescription>
                 </CardHeader>
-                <CardContent className="flex items-center justify-between pb-2">
-                    <Button variant="ghost">
-                        <LucideShoppingCart className="w-4" />
-                    </Button>
-                    <span className="font-bold text-xl">
-                        Rs.
-                        {(product.price * 100).toLocaleString("en-US")}
-                    </span>
-                </CardContent>
-                <CardFooter className="flex justify-between">
-                    <Button variant="default" className="text-xs h-8 px-3">
-                        Buy Now
-                    </Button>
-                    <div className="bg-primary/5 flex justify-between items-center px-3 h-8 rounded cursor-pointer hover:bg-primary/10 transition-all">
-                        <Image
-                            src="/icons/yellow_star.png"
-                            width={20}
-                            height={20}
-                            alt="Ratings"
-                            className="w-5 mr-1"
-                        />
-                        <span className="font-bold text-sm">
-                            {product.rating.toPrecision(2)}
-                        </span>
-                    </div>
-                </CardFooter>
             </Link>
+            <CardContent className="flex items-center justify-between pb-2">
+                <Button variant="ghost" onClick={handleAddToCart}>
+                    <LucideShoppingCart className="w-4" />
+                </Button>
+                <span className="font-bold text-xl">
+                    Rs.
+                    {(product.price * 100).toLocaleString("en-US")}
+                </span>
+            </CardContent>
+            <CardFooter className="flex justify-between">
+                <Button variant="default" className="text-xs h-8 px-3">
+                    Buy Now
+                </Button>
+                <div className="bg-primary/5 flex justify-between items-center px-3 h-8 rounded cursor-pointer hover:bg-primary/10 transition-all">
+                    <Image
+                        src="/icons/yellow_star.png"
+                        width={20}
+                        height={20}
+                        alt="Ratings"
+                        className="w-5 mr-1"
+                    />
+                    <span className="font-bold text-sm">
+                        {product.rating.toPrecision(2)}
+                    </span>
+                </div>
+            </CardFooter>
         </Card>
     );
 }

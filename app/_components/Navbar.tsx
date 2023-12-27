@@ -4,7 +4,7 @@ import SearchBar from "./SearchBar";
 import Logo from "./Logo";
 import Link from "next/link";
 import { UserButton, auth } from "@clerk/nextjs";
-import { ShoppingCart } from "lucide-react";
+import ShoppingCart from "./ShoppingCart";
 
 function Navbar() {
     const { userId } = auth();
@@ -25,12 +25,7 @@ function Navbar() {
                     </>
                 ) : (
                     <div className="flex items-center gap-6">
-                        <Link href="/cart" className="relative w-6 h-6">
-                            <span className="bg-red-500 text-white font-bold px-1.5 py-0.5 text-xs rounded-full absolute -top-1.5 -right-3">
-                                <span className="relative top-[1px]">0</span>
-                            </span>
-                            <ShoppingCart className="hover:bg-black/5 px-1 w-7 h-7 rounded" />
-                        </Link>
+                        <ShoppingCart />
                         <UserButton afterSignOutUrl="/" />
                     </div>
                 )}
