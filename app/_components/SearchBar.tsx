@@ -7,7 +7,6 @@ import { Input } from "@/components/ui/input";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import { fetchProductsBySearch } from "@/lib/features/products/productsThunk";
 import { useRouter, useSearchParams } from "next/navigation";
-import { adjustProgress } from "@/lib/features/loading/loadingSlice";
 
 function SearchBar() {
     const searchParams = useSearchParams();
@@ -16,7 +15,6 @@ function SearchBar() {
 
     const [search, setSearch] = useState<string>(query || "");
     const dispatch = useAppDispatch();
-    const { progress } = useAppSelector((state) => state.loading);
 
     const resetSearch = () => {
         setSearch("");
@@ -25,13 +23,9 @@ function SearchBar() {
     const handleSearch = async () => {
         if (!search) return;
 
-        dispatch(adjustProgress(progress + 10));
-
-        dispatch(adjustProgress(progress + 10));
         dispatch(fetchProductsBySearch(search));
 
         router.push(`/search?q=${search}`);
-        dispatch(adjustProgress(100));
     };
 
     return (

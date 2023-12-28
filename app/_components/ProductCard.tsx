@@ -16,7 +16,6 @@ import Image from "next/image";
 import React from "react";
 import Link from "next/link";
 import { useAppDispatch } from "@/lib/hooks";
-import { adjustProgress } from "@/lib/features/loading/loadingSlice";
 import { addToCart } from "@/lib/features/cart/cartSlice";
 import { productsToPurchase } from "@/lib/features/checkout/checkoutSlice";
 
@@ -44,10 +43,7 @@ function ProductCard({ product }: ProductCardProps) {
 
     return (
         <Card className="w-56">
-            <Link
-                href={`/products/${product.id}`}
-                onClick={() => dispatch(adjustProgress(100))}
-            >
+            <Link href={`/products/${product.id}`}>
                 <Image
                     src={product.thumbnail}
                     alt={product.title}
