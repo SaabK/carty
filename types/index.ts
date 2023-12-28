@@ -62,3 +62,8 @@ export interface CartState {
     price: number;
     noOfItems: number;
 }
+
+export interface CheckoutState {
+    productsToBuy: CartItem[];
+    total: number;
+}

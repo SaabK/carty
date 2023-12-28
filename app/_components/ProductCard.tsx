@@ -18,6 +18,7 @@ import Link from "next/link";
 import { useAppDispatch } from "@/lib/hooks";
 import { adjustProgress } from "@/lib/features/loading/loadingSlice";
 import { addToCart } from "@/lib/features/cart/cartSlice";
+import { productsToPurchase } from "@/lib/features/checkout/checkoutSlice";
 
 interface ProductCardProps {
     product: product;
@@ -28,6 +29,17 @@ function ProductCard({ product }: ProductCardProps) {
 
     const handleAddToCart = () => {
         dispatch(addToCart({ product }));
+    };
+
+    const handleBuyNow = () => {
+        dispatch(
+            productsToPurchase([
+                {
+                    product,
+                    quantity: 1,
+                },
+            ])
+        );
     };
 
     return (
@@ -63,9 +75,15 @@ function ProductCard({ product }: ProductCardProps) {
                 </span>
             </CardContent>
             <CardFooter className="flex justify-between">
-                <Button variant="default" className="text-xs h-8 px-3">
-                    Buy Now
-                </Button>
+                <Link href={`/purchase`}>
+                    <Button
+                        variant="default"
+                        className="text-xs h-8 px-3"
+                        onClick={handleBuyNow}
+                    >
+                        Buy Now
+                    </Button>
+                </Link>
                 <div className="bg-primary/5 flex justify-between items-center px-3 h-8 rounded cursor-pointer hover:bg-primary/10 transition-all">
                     <Image
                         src="/icons/yellow_star.png"
