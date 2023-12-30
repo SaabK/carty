@@ -4,7 +4,7 @@ import FormComponent from "./_components/Form";
 
 function ProductBuyPage() {
     return (
-        <section className="container grid grid-cols-2 gap-16 my-6">
+        <section className="container grid grid-cols-1 md:grid-cols-2 gap-16 my-6">
             <Checkout />
             <FormComponent />
         </section>

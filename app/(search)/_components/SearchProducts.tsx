@@ -8,7 +8,7 @@ interface SearchProductsProps {
 
 function SearchProducts({ products = [] }: SearchProductsProps) {
     return (
-        <div className="cards">
+        <div className="cards-spaced">
             {products?.map((product, index) => (
                 <ProductCard product={product} key={index} />
             ))}

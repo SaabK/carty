@@ -31,13 +31,13 @@ function Search() {
                 className=" text-lg"
             />
             {products.length === 0 && (
-                <div className="mx-auto w-fit my-3 flex flex-col items-center">
+                <div className="mx-auto w-fit my-8 flex flex-col items-center">
                     <Image
                         src="/illustrations/no_data.svg"
                         alt="No products were found related to your search"
                         width={240}
                         height={240}
-                        className="mt-7 mb-3 relative right-5"
+                        className="mt-7 mb-3 relative right-5 md:w-60 md:h-60 w-52 h-52"
                     />
                     <span className="text-4xl font-bold text-black/50 font-mono">
                         No data was found...

@@ -46,34 +46,30 @@ function CartProduct({
                 alt="text"
                 width={170}
                 height={100}
-                className="rounded object-cover h-44 w-full col-span-2"
+                className="rounded object-cover h-44 w-full col-span-3 md:col-span-2"
             />
-            <div className="col-span-5 flex flex-col h-44">
+            <div className="col-span-4 md:col-span-5 flex flex-col gap-1 h-auto">
                 <div className="flex justify-between">
-                    <h3 className="text-2xl font-bold">{title}</h3>
+                    <h3 className="text-2xl font-bold truncate">{title}</h3>
                     <Button
                         variant="ghost"
                         className="px-2 py-0.5"
                         onClick={handleDelete}
                     >
-                        <Trash2
-                            color="#FF7F7F"
-                            // className="w-6 cursor-pointer hover:bg-primary/5 p-1 rounded"
-                            className="w-5"
-                        />
+                        <Trash2 color="#FF7F7F" className="w-5" />
                     </Button>
                 </div>
-                <p className="text-sm text-justify">
+                <p className="text-sm text-justify line-clamp-3 md:line-clamp-5">
                     {description} Lorem ipsum dolor sit amet consectetur
                     adipisicing elit. Eos tenetur est omnis asperiores sunt
                     aperiam! Lorem ipsum.
                 </p>
                 <Badge className="w-fit text-xs mt-2">{brand}</Badge>
                 <div className="flex mt-auto justify-between">
-                    <span className="text-2xl font-bold font-mono underline">
+                    <span className="text-[22px] md:text-2xl font-bold font-mono underline">
                         Rs. {(price * 100).toLocaleString("en-US")}
                     </span>
-                    <div className="flex items-center gap-[13px]">
+                    <div className="flex items-center gap-2 md:gap-[13px]">
                         <Button
                             variant="outline"
                             className="px-2.5 py-0 h-8"

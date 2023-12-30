@@ -50,7 +50,7 @@ function AddToCart({ product, name }: AddToCartProps) {
                     variant="outline"
                     className="px-2.5 py-0 h-9"
                     onClick={handleDecrement}
-                    disabled
+                    disabled={quantity === 1}
                 >
                     <Minus className="w-4" />
                 </Button>

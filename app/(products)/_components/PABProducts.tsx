@@ -28,7 +28,7 @@ function PABProducts() {
     return (
         <section className="mt-12">
             <Heading text="People Also Bought" />
-            <div className="flex justify-between gap-6 mt-3 flex-wrap ">
+            <div className="cards-spaced ">
                 {products.map((product, index) => (
                     <ProductCard key={index} product={product} />
                 ))}

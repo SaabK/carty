@@ -14,10 +14,9 @@ async function SaleProducts() {
         <section id="products-on-sale" className="py-5 container">
             <div className="flex items-center justify-between">
                 <Heading text="Flash Sale" />
-                {/* TODO: add a countdown here instead of shop now button ( just an idea not necessary ) */}
                 <Button variant="outline">Shop Now</Button>
             </div>
-            <div className="flex items-start justify-between" id="products">
+            <div className="cards-spaced" id="products">
                 {products.map((product: product) => (
                     <ProductCard key={product.id} product={product} />
                 ))}

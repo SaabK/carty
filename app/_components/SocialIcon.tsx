@@ -24,8 +24,7 @@ function SocialIcon({ social }: SocialIconProps) {
                     onMouseEnter={handleEnter}
                     onMouseLeave={handleLeave}
                     color={isHover ? "#333" : "white"}
-                    width={20}
-                    height={20}
+                    className="w-4 h-4 md:w-5 md:h-5"
                     fill={isHover ? "white" : ""}
                 />
             </Link>

@@ -10,7 +10,7 @@ function Navbar() {
     const { userId } = auth();
 
     return (
-        <header className="container py-4 flex gap-5 items-center justify-center">
+        <header className="container py-3 md:py-4 flex gap-2.5 md:gap-5 items-center justify-center">
             <Logo />
             <SearchBar />
             <div className="flex gap-2">

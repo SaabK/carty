@@ -41,9 +41,9 @@ function JFYProducts() {
     };
 
     return (
-        <section className="container my-7">
+        <section className="container my-5 md:my-7">
             <Heading text="Just For You" />
-            <div className="flex justify-between flex-wrap gap-6">
+            <div className="cards-spaced">
                 {products.slice(5).map((product: product) => (
                     <ProductCard key={product.id} product={product} />
                 ))}

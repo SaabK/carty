@@ -6,7 +6,7 @@ import { Carousel } from "react-responsive-carousel";
 
 function Images({ images }: ImagesProps) {
     return (
-        <div className="-mb-12">
+        <div className="md:-mb-12">
             <Carousel
                 showStatus={false}
                 renderThumbs={() =>
@@ -23,12 +23,13 @@ function Images({ images }: ImagesProps) {
                 // showThumbs={false}
             >
                 {images.map((image, index) => (
-                    <div className="w-full h-96 relative" key={index}>
+                    <div className="w-full h-72 md:h-96 relative" key={index}>
                         <Image
                             src={image}
                             alt="Product"
-                            height={384}
-                            width={500}
+                            // height={384}
+                            // width={500}
+                            layout="fill"
                             className="object-cover"
                         />
                     </div>

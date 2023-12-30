@@ -31,7 +31,7 @@ function YMLProducts({ category }: YMLProductsProps) {
         <section className="mt-12">
             {/* TODO: When clicked on add to cart button make sure to bring the screen to this section */}
             <Heading text="You May Also Like" />
-            <div className="flex justify-between gap-3 mt-3">
+            <div className="cards-spaced">
                 {products.map((product, index) => (
                     <ProductCard key={index} product={product} />
                 ))}

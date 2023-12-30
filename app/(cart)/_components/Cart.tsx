@@ -8,10 +8,10 @@ import { useAppSelector } from "@/lib/hooks";
 function Cart() {
     const { cart } = useAppSelector((state) => state.cart);
     return (
-        <>
+        <div>
             <CartProducts cart={cart} />
             <CartTotal />
-        </>
+        </div>
     );
 }
 

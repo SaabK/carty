@@ -42,8 +42,8 @@ function Details({
                 </p>
             </div>
 
-            <div className="flex flex-col justify-between gap-2">
-                <h3 className="font-light text-3xl my-1 font-mono">
+            <div className="flex items-center md:items-start md:flex-col justify-between gap-2">
+                <h3 className="font-light text-4xl md:text-3xl my-1 font-mono underline">
                     Rs.{(price * 100).toLocaleString("en-US")}
                 </h3>
                 <AddToCart product={product} name={title} />

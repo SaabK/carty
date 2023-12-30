@@ -40,9 +40,9 @@ function ProductPage({ params: { id } }: ProductPageProps) {
     }, [id]);
 
     return (
-        <div className="container my-10">
+        <div className="container my-7 md:my-10">
             {/* Add a loader for when the product has not yet been fetched */}
-            <div className="grid grid-cols-2 gap-8 mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-8 mb-12">
                 <Images images={product?.images} />
                 <Details product={product} />
             </div>

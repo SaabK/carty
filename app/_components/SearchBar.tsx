@@ -65,7 +65,7 @@ function SearchBar() {
                     onBlur={() => setFocused(false)}
                     type="text"
                     placeholder="Search"
-                    className={`focus-visible:ring-transparent focus-visible:rounded-b-none`}
+                    className={`focus-visible:ring-transparent focus-visible:rounded-b-none pr-16`}
                     id="search"
                     autoComplete="off"
                     value={search}
@@ -96,7 +96,7 @@ function SearchBar() {
                                 </span>
                             </>
                         ))}
-                        <Button
+                        {/* <Button
                             variant="destructive"
                             className="text-xs px-2 py-1 h-6 ml-auto z-40"
                             onClick={() => {
@@ -105,7 +105,7 @@ function SearchBar() {
                             }}
                         >
                             Delete All
-                        </Button>
+                        </Button> */}
                     </div>
                 )}
             </div>

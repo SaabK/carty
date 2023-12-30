@@ -22,16 +22,16 @@ async function CartPage() {
 
     return (
         <section className="container my-5">
-            <div className="grid grid-cols-5 gap-6 items-start">
+            <div className="grid grid-cols-1 md:grid-cols-5 md:gap-6 items-start">
                 <div className="col-span-3">
                     <Heading text="Your Shopping Cart" />
                     <Cart />
                 </div>
 
                 {/* TODO: here fetch 2 products of each category of products in the cart. Filter out the same values */}
-                <div className="col-span-2">
+                <div className="col-span-2 mt-5 md:mt-0">
                     <Heading text="You May Also Like" />
-                    <div className="grid grid-cols-2 gap-6">
+                    <div className="cards-spaced">
                         {products.map((product: product, index: number) => (
                             <ProductCard product={product} key={index} />
                         ))}
