@@ -43,7 +43,7 @@ function ProductCard({ product }: ProductCardProps) {
 
     return (
         // <Card className="w-[12.65rem] sm:w-[15rem] md:w-56">
-        <Card className="w-full odd:last:col-span-full odd:last:justify-self-center odd:last:w-1/2">
+        <Card className="w-full odd:last:col-span-full odd:last:justify-self-center odd:last:w-1/2 md:odd:last:col-span-1 md:odd:last:justify-self-auto md:odd:last:w-full">
             <Link href={`/products/${product.id}`}>
                 <Image
                     src={product.thumbnail}

@@ -12,7 +12,7 @@ function Checkout() {
 
     useEffect(() => {
         dispatch(calculateTotal());
-    }, [productsToBuy]);
+    }, [productsToBuy, dispatch]);
 
     return (
         <div className="">

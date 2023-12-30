@@ -33,7 +33,7 @@ function SearchBar() {
     useEffect(() => {
         dispatch(calculateTotal());
         dispatch(calculateQuantity());
-    }, [cart]);
+    }, [cart, dispatch]);
 
     const resetSearch = () => {
         setSearch("");

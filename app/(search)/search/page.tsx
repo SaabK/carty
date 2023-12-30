@@ -20,7 +20,7 @@ function Search() {
 
         dispatch(fetchProductsBySearch(query));
         dispatch(addSearchHistory(query));
-    }, [query]);
+    }, [query, dispatch]);
 
     const { products } = useAppSelector((state) => state.search);
 

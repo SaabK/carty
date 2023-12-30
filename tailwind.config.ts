@@ -16,8 +16,8 @@ module.exports = {
                     sm: "2rem",
                     md: "3rem",
                     lg: "4rem",
-                    xl: "5rem",
-                    "2xl": "6rem",
+                    xl: "4.5rem",
+                    "2xl": "5rem",
                 },
                 screens: {
                     "2xl": "1400px",

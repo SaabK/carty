@@ -4,7 +4,6 @@ import { createSlice, current } from "@reduxjs/toolkit";
 const initialState: CheckoutState = {
     productsToBuy: [],
     total: 0,
-    info: {},
 };
 
 export const checkoutSlice = createSlice({

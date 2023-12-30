@@ -23,11 +23,13 @@ function CartProducts({ cart }: CartProductsProps) {
             ) : (
                 <>
                     {cart.map((cartItem: CartItem, index: number) => (
-                        <div className="py-2 rounded grid grid-cols-7 gap-4 items-start">
+                        <div
+                            className="py-2 rounded grid grid-cols-7 gap-4 items-start"
+                            key={index}
+                        >
                             <CartProduct
                                 {...cartItem.product}
                                 quantity={cartItem.quantity}
-                                key={index}
                             />
                         </div>
                     ))}
