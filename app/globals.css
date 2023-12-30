@@ -21,6 +21,14 @@ img {
     display: block;
 }
 
+.cards {
+    @apply flex flex-wrap gap-6;
+}
+
+.cards-spaced {
+    @apply flex flex-wrap gap-6 justify-between;
+}
+
 @layer base {
     :root {
         --background: 0 0% 100%;

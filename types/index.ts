@@ -40,6 +40,7 @@ export interface productsState {
     products: product[];
     status: "idle" | "loading" | "success" | "failed";
     error: string | null;
+    searchHistory: string[];
 }
 
 export interface loadingState {

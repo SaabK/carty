@@ -8,7 +8,7 @@ interface SearchProductsProps {
 
 function SearchProducts({ products = [] }: SearchProductsProps) {
     return (
-        <div className="flex flex-wrap gap-6">
+        <div className="cards">
             {products?.map((product, index) => (
                 <ProductCard product={product} key={index} />
             ))}

@@ -1,16 +1,26 @@
 "use client";
 
-import React from "react";
-import { useSearchParams } from "next/navigation";
-import { useAppSelector } from "@/lib/hooks";
+import React, { useEffect } from "react";
+import { usePathname, useSearchParams } from "next/navigation";
+import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 
 import SearchProducts from "../_components/SearchProducts";
 import Heading from "@/app/_components/Heading";
 import Image from "next/image";
+import { fetchProductsBySearch } from "@/lib/features/products/productsThunk";
+import { addSearchHistory } from "@/lib/features/products/productsSlice";
 
 function Search() {
     const searchParams = useSearchParams();
     const query = searchParams.get("q");
+    const dispatch = useAppDispatch();
+
+    useEffect(() => {
+        if (!query) return;
+
+        dispatch(fetchProductsBySearch(query));
+        dispatch(addSearchHistory(query));
+    }, [query]);
 
     const { products } = useAppSelector((state) => state.search);
 
